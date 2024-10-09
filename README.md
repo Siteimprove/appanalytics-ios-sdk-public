@@ -20,7 +20,7 @@ https://github.com/Siteimprove/appanalytics-ios-sdk-public
 ```
 
 ### Manual
-The XCFramework can be downloaded from our [release page] (add link to the release page of the SDK). After unzipping, place the XCFramework in the Framework Search Paths of your Xcode project, import it into the project, and configure it to `Embed & Sign`.
+The XCFramework can be downloaded from our [release page](https://github.com/Siteimprove/appanalytics-ios-sdk-public/releases). After unzipping, place the XCFramework in the Framework Search Paths of your Xcode project, import it into the project, and configure it to `Embed & Sign`.
 
 ## Configuring the SDK
 Our suggestion for configuring the Siteimprove AppAnalytics is to do so in the AppDelegate.
