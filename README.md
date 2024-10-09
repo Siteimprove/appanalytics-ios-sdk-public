@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ## SDK API
 ```swift
 /// MARK: - Configures the SDK
-public func configure(apiKey: String, region: String? = **nil**)
+public func configure(apiKey: String, region: String)
 ```
 
 ## Events Tracking
