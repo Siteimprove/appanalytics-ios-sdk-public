@@ -778,8 +778,8 @@
       },
       {
         "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
         "declKind": "Import",
         "moduleName": "SiteimproveAppAnalytics",
         "declAttributes": [
@@ -788,10 +788,20 @@
       },
       {
         "kind": "Import",
-        "name": "SwiftUI",
-        "printedName": "SwiftUI",
+        "name": "Combine",
+        "printedName": "Combine",
         "declKind": "Import",
         "moduleName": "SiteimproveAppAnalytics"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "SiteimproveAppAnalytics",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -1759,52 +1769,6 @@
         "children": [
           {
             "kind": "Function",
-            "name": "trackEvent",
-            "printedName": "trackEvent(with:data:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[Swift.String : Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "usr": "s:SD"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23SiteimproveAppAnalytics20EventManagerProtocolP05trackD04with4dataySS_SDySSypGtF",
-            "mangledName": "$s23SiteimproveAppAnalytics20EventManagerProtocolP05trackD04with4dataySS_SDySSypGtF",
-            "moduleName": "SiteimproveAppAnalytics",
-            "genericSig": "<τ_0_0 where τ_0_0 : SiteimproveAppAnalytics.EventManagerProtocol>",
-            "sugared_genericSig": "<Self where Self : SiteimproveAppAnalytics.EventManagerProtocol>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "trackAndLog",
             "printedName": "trackAndLog(event:type:navigationTitle:)",
             "children": [
@@ -1843,6 +1807,53 @@
             "declKind": "Func",
             "usr": "s:23SiteimproveAppAnalytics20EventManagerProtocolP11trackAndLog5event4type15navigationTitleySS_AA0D4TypeOSSSgtF",
             "mangledName": "$s23SiteimproveAppAnalytics20EventManagerProtocolP11trackAndLog5event4type15navigationTitleySS_AA0D4TypeOSSSgtF",
+            "moduleName": "SiteimproveAppAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : SiteimproveAppAnalytics.EventManagerProtocol>",
+            "sugared_genericSig": "<Self where Self : SiteimproveAppAnalytics.EventManagerProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackSearchEvent",
+            "printedName": "trackSearchEvent(q:s:nr:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23SiteimproveAppAnalytics20EventManagerProtocolP011trackSearchD01q1s2nrySS_SbSiSgtF",
+            "mangledName": "$s23SiteimproveAppAnalytics20EventManagerProtocolP011trackSearchD01q1s2nrySS_SbSiSgtF",
             "moduleName": "SiteimproveAppAnalytics",
             "genericSig": "<τ_0_0 where τ_0_0 : SiteimproveAppAnalytics.EventManagerProtocol>",
             "sugared_genericSig": "<Self where Self : SiteimproveAppAnalytics.EventManagerProtocol>",
@@ -2285,55 +2296,6 @@
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "trackEvent",
-            "printedName": "trackEvent(name:data:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[Swift.String : Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "usr": "s:SD"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@SiteimproveAppAnalytics@objc(cs)Siteimprove(im)trackEventWithName:data:",
-            "mangledName": "$s23SiteimproveAppAnalytics0A0C10trackEvent4name4dataySS_SDySSypGtF",
-            "moduleName": "SiteimproveAppAnalytics",
-            "objc_name": "trackEventWithName:data:",
-            "declAttributes": [
-              "Final",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -2637,9 +2599,69 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "srch",
+            "printedName": "srch",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SiteimproveAppAnalytics.SRCH?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SRCH",
+                    "printedName": "SiteimproveAppAnalytics.SRCH",
+                    "usr": "s:23SiteimproveAppAnalytics4SRCHV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23SiteimproveAppAnalytics3DTOV4srchAA4SRCHVSgvp",
+            "mangledName": "$s23SiteimproveAppAnalytics3DTOV4srchAA4SRCHVSgvp",
+            "moduleName": "SiteimproveAppAnalytics",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "SiteimproveAppAnalytics.SRCH?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SRCH",
+                        "printedName": "SiteimproveAppAnalytics.SRCH",
+                        "usr": "s:23SiteimproveAppAnalytics4SRCHV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23SiteimproveAppAnalytics3DTOV4srchAA4SRCHVSgvg",
+                "mangledName": "$s23SiteimproveAppAnalytics3DTOV4srchAA4SRCHVSgvg",
+                "moduleName": "SiteimproveAppAnalytics",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(ts:tz:st:scr:)",
+            "printedName": "init(ts:tz:st:scr:srch:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2686,11 +2708,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SiteimproveAppAnalytics.SRCH?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SRCH",
+                    "printedName": "SiteimproveAppAnalytics.SRCH",
+                    "usr": "s:23SiteimproveAppAnalytics4SRCHV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:23SiteimproveAppAnalytics3DTOV2ts2tz2st3scrACs5Int64V_SSAA2STVSgAA3SCRVSgtcfc",
-            "mangledName": "$s23SiteimproveAppAnalytics3DTOV2ts2tz2st3scrACs5Int64V_SSAA2STVSgAA3SCRVSgtcfc",
+            "usr": "s:23SiteimproveAppAnalytics3DTOV2ts2tz2st3scr4srchACs5Int64V_SSAA2STVSgAA3SCRVSgAA4SRCHVSgtcfc",
+            "mangledName": "$s23SiteimproveAppAnalytics3DTOV2ts2tz2st3scr4srchACs5Int64V_SSAA2STVSgAA3SCRVSgAA4SRCHVSgtcfc",
             "moduleName": "SiteimproveAppAnalytics",
             "declAttributes": [
               "AccessControl"
@@ -3604,6 +3640,235 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "SRCH",
+        "printedName": "SRCH",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "q",
+            "printedName": "q",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23SiteimproveAppAnalytics4SRCHV1qSSvp",
+            "mangledName": "$s23SiteimproveAppAnalytics4SRCHV1qSSvp",
+            "moduleName": "SiteimproveAppAnalytics",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23SiteimproveAppAnalytics4SRCHV1qSSvg",
+                "mangledName": "$s23SiteimproveAppAnalytics4SRCHV1qSSvg",
+                "moduleName": "SiteimproveAppAnalytics",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "s",
+            "printedName": "s",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23SiteimproveAppAnalytics4SRCHV1sSbvp",
+            "mangledName": "$s23SiteimproveAppAnalytics4SRCHV1sSbvp",
+            "moduleName": "SiteimproveAppAnalytics",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23SiteimproveAppAnalytics4SRCHV1sSbvg",
+                "mangledName": "$s23SiteimproveAppAnalytics4SRCHV1sSbvg",
+                "moduleName": "SiteimproveAppAnalytics",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nr",
+            "printedName": "nr",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:23SiteimproveAppAnalytics4SRCHV2nrSiSgvp",
+            "mangledName": "$s23SiteimproveAppAnalytics4SRCHV2nrSiSgvp",
+            "moduleName": "SiteimproveAppAnalytics",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:23SiteimproveAppAnalytics4SRCHV2nrSiSgvg",
+                "mangledName": "$s23SiteimproveAppAnalytics4SRCHV2nrSiSgvg",
+                "moduleName": "SiteimproveAppAnalytics",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SRCH",
+                "printedName": "SiteimproveAppAnalytics.SRCH",
+                "usr": "s:23SiteimproveAppAnalytics4SRCHV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:23SiteimproveAppAnalytics4SRCHV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s23SiteimproveAppAnalytics4SRCHV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "SiteimproveAppAnalytics",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23SiteimproveAppAnalytics4SRCHV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s23SiteimproveAppAnalytics4SRCHV6encode2toys7Encoder_p_tKF",
+            "moduleName": "SiteimproveAppAnalytics",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:23SiteimproveAppAnalytics4SRCHV",
+        "mangledName": "$s23SiteimproveAppAnalytics4SRCHV",
+        "moduleName": "SiteimproveAppAnalytics",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -3835,52 +4100,6 @@
         "children": [
           {
             "kind": "Function",
-            "name": "trackEvent",
-            "printedName": "trackEvent(with:data:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Dictionary",
-                "printedName": "[Swift.String : Any]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ProtocolComposition",
-                    "printedName": "Any"
-                  }
-                ],
-                "usr": "s:SD"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:23SiteimproveAppAnalytics12EventManagerC05trackD04with4dataySS_SDySSypGtF",
-            "mangledName": "$s23SiteimproveAppAnalytics12EventManagerC05trackD04with4dataySS_SDySSypGtF",
-            "moduleName": "SiteimproveAppAnalytics",
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "trackAndLog",
             "printedName": "trackAndLog(event:type:navigationTitle:)",
             "children": [
@@ -3923,7 +4142,56 @@
             "moduleName": "SiteimproveAppAnalytics",
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackSearchEvent",
+            "printedName": "trackSearchEvent(q:s:nr:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23SiteimproveAppAnalytics12EventManagerC011trackSearchD01q1s2nrySS_SbSiSgtF",
+            "mangledName": "$s23SiteimproveAppAnalytics12EventManagerC011trackSearchD01q1s2nrySS_SbSiSgtF",
+            "moduleName": "SiteimproveAppAnalytics",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -4335,6 +4603,62 @@
             "declKind": "Func",
             "usr": "s:23SiteimproveAppAnalytics24DataPointServiceProtocolP9screenDTO5event15navigationTitleSayAA0I0VGSS_SSSgtF",
             "mangledName": "$s23SiteimproveAppAnalytics24DataPointServiceProtocolP9screenDTO5event15navigationTitleSayAA0I0VGSS_SSSgtF",
+            "moduleName": "SiteimproveAppAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : SiteimproveAppAnalytics.DataPointServiceProtocol>",
+            "sugared_genericSig": "<Self where Self : SiteimproveAppAnalytics.DataPointServiceProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "searchDTO",
+            "printedName": "searchDTO(q:s:nr:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[SiteimproveAppAnalytics.DTO]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DTO",
+                    "printedName": "SiteimproveAppAnalytics.DTO",
+                    "usr": "s:23SiteimproveAppAnalytics3DTOV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23SiteimproveAppAnalytics24DataPointServiceProtocolP9searchDTO1q1s2nrSayAA0I0VGSS_SbSiSgtF",
+            "mangledName": "$s23SiteimproveAppAnalytics24DataPointServiceProtocolP9searchDTO1q1s2nrSayAA0I0VGSS_SbSiSgtF",
             "moduleName": "SiteimproveAppAnalytics",
             "genericSig": "<τ_0_0 where τ_0_0 : SiteimproveAppAnalytics.DataPointServiceProtocol>",
             "sugared_genericSig": "<Self where Self : SiteimproveAppAnalytics.DataPointServiceProtocol>",
@@ -4784,6 +5108,55 @@
             "protocolReq": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "logSearchEvent",
+            "printedName": "logSearchEvent(deviceID:dto:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[SiteimproveAppAnalytics.DTO]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DTO",
+                    "printedName": "SiteimproveAppAnalytics.DTO",
+                    "usr": "s:23SiteimproveAppAnalytics3DTOV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23SiteimproveAppAnalytics21LoggerServiceProtocolP14logSearchEvent8deviceID3dtoySSSg_SayAA3DTOVGtF",
+            "mangledName": "$s23SiteimproveAppAnalytics21LoggerServiceProtocolP14logSearchEvent8deviceID3dtoySSSg_SayAA3DTOVGtF",
+            "moduleName": "SiteimproveAppAnalytics",
+            "genericSig": "<τ_0_0 where τ_0_0 : SiteimproveAppAnalytics.LoggerServiceProtocol>",
+            "sugared_genericSig": "<Self where Self : SiteimproveAppAnalytics.LoggerServiceProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Protocol",
@@ -5073,7 +5446,8 @@
             "mangledName": "$s23SiteimproveAppAnalytics16DataPointServiceV8stateDTO5eventSayAA0H0VGSS_tF",
             "moduleName": "SiteimproveAppAnalytics",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -5120,6 +5494,61 @@
             "declKind": "Func",
             "usr": "s:23SiteimproveAppAnalytics16DataPointServiceV9screenDTO5event15navigationTitleSayAA0H0VGSS_SSSgtF",
             "mangledName": "$s23SiteimproveAppAnalytics16DataPointServiceV9screenDTO5event15navigationTitleSayAA0H0VGSS_SSSgtF",
+            "moduleName": "SiteimproveAppAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "searchDTO",
+            "printedName": "searchDTO(q:s:nr:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[SiteimproveAppAnalytics.DTO]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DTO",
+                    "printedName": "SiteimproveAppAnalytics.DTO",
+                    "usr": "s:23SiteimproveAppAnalytics3DTOV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23SiteimproveAppAnalytics16DataPointServiceV9searchDTO1q1s2nrSayAA0H0VGSS_SbSiSgtF",
+            "mangledName": "$s23SiteimproveAppAnalytics16DataPointServiceV9searchDTO1q1s2nrSayAA0H0VGSS_SbSiSgtF",
             "moduleName": "SiteimproveAppAnalytics",
             "declAttributes": [
               "AccessControl"
@@ -5219,6 +5648,54 @@
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "logSearchEvent",
+            "printedName": "logSearchEvent(deviceID:dto:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[SiteimproveAppAnalytics.DTO]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DTO",
+                    "printedName": "SiteimproveAppAnalytics.DTO",
+                    "usr": "s:23SiteimproveAppAnalytics3DTOV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:23SiteimproveAppAnalytics13LoggerServiceV14logSearchEvent8deviceID3dtoySSSg_SayAA3DTOVGtF",
+            "mangledName": "$s23SiteimproveAppAnalytics13LoggerServiceV14logSearchEvent8deviceID3dtoySSSg_SayAA3DTOVGtF",
+            "moduleName": "SiteimproveAppAnalytics",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Struct",
@@ -5240,160 +5717,62 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "UIViewController",
-        "printedName": "UIViewController",
+        "name": "View",
+        "printedName": "View",
         "children": [
           {
-            "kind": "Var",
-            "name": "next",
-            "printedName": "next",
+            "kind": "Function",
+            "name": "dismissingKeyboard",
+            "printedName": "dismissingKeyboard()",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "UIKit.UIResponder?",
+                "name": "ModifiedContent",
+                "printedName": "SwiftUI.ModifiedContent<τ_0_0, SiteimproveAppAnalytics.DismissingKeyboard>",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "UIResponder",
-                    "printedName": "UIKit.UIResponder",
-                    "usr": "c:objc(cs)UIResponder"
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DismissingKeyboard",
+                    "printedName": "SiteimproveAppAnalytics.DismissingKeyboard",
+                    "usr": "s:23SiteimproveAppAnalytics18DismissingKeyboardV"
                   }
                 ],
-                "usr": "s:Sq"
+                "usr": "s:7SwiftUI15ModifiedContentV"
               }
             ],
-            "declKind": "Var",
-            "usr": "c:@CM@SiteimproveAppAnalytics@@objc(cs)UIViewController(py)nextResponder",
-            "mangledName": "$sSo16UIViewControllerC23SiteimproveAppAnalyticsE4nextSo11UIResponderCSgvp",
+            "declKind": "Func",
+            "usr": "s:7SwiftUI4ViewP23SiteimproveAppAnalyticsE18dismissingKeyboardQryF",
+            "mangledName": "$s7SwiftUI4ViewP23SiteimproveAppAnalyticsE18dismissingKeyboardQryF",
             "moduleName": "SiteimproveAppAnalytics",
-            "overriding": true,
-            "isOpen": true,
-            "objc_name": "nextResponder",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Custom",
-              "Override",
-              "AccessControl"
-            ],
+            "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
+            "sugared_genericSig": "<Self where Self : SwiftUI.View>",
             "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "UIKit.UIResponder?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "UIResponder",
-                        "printedName": "UIKit.UIResponder",
-                        "usr": "c:objc(cs)UIResponder"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@CM@SiteimproveAppAnalytics@@objc(cs)UIViewController(im)nextResponder",
-                "mangledName": "$sSo16UIViewControllerC23SiteimproveAppAnalyticsE4nextSo11UIResponderCSgvg",
-                "moduleName": "SiteimproveAppAnalytics",
-                "overriding": true,
-                "isOpen": true,
-                "objc_name": "nextResponder",
-                "declAttributes": [
-                  "Dynamic",
-                  "ObjC"
-                ],
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
+            "funcSelfKind": "NonMutating"
           }
         ],
-        "declKind": "Class",
-        "usr": "c:objc(cs)UIViewController",
-        "moduleName": "UIKit",
-        "isOpen": true,
-        "intro_iOS": "2.0",
-        "objc_name": "UIViewController",
+        "declKind": "Protocol",
+        "usr": "s:7SwiftUI4ViewP",
+        "mangledName": "$s7SwiftUI4ViewP",
+        "moduleName": "SwiftUI",
+        "genericSig": "<τ_0_0.Body : SwiftUI.View>",
+        "sugared_genericSig": "<Self.Body : SwiftUI.View>",
+        "intro_Macosx": "10.15",
+        "intro_iOS": "13.0",
+        "intro_tvOS": "13.0",
+        "intro_watchOS": "6.0",
         "declAttributes": [
+          "TypeEraser",
           "Available",
-          "ObjC",
-          "NonSendable",
-          "Custom",
-          "Dynamic"
+          "Available",
+          "Available",
+          "Available"
         ],
-        "superclassUsr": "c:objc(cs)UIResponder",
-        "isExternal": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "UIKit.UIResponder",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
-          }
-        ]
+        "isExternal": true
       },
       {
         "kind": "TypeDecl",
@@ -5901,203 +6280,294 @@
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 1866,
+      "offset": 1960,
       "length": 12,
       "value": "\"eventName \""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 1903,
+      "offset": 2019,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2005,
+      "offset": 2064,
+      "length": 12,
+      "value": "\"eventName \""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
+      "kind": "StringLiteral",
+      "offset": 2079,
+      "length": 8,
+      "value": "\"Search\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
+      "kind": "StringLiteral",
+      "offset": 2202,
       "length": 43,
       "value": "\"❌ Error: Invalid response, \""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2047,
+      "offset": 2244,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "IntegerLiteral",
-      "offset": 2153,
+      "offset": 2350,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2179,
+      "offset": 2376,
       "length": 26,
       "value": "\"✅ 200 OK, \""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2204,
+      "offset": 2401,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "IntegerLiteral",
-      "offset": 2224,
+      "offset": 2421,
       "length": 3,
       "value": "403"
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2250,
+      "offset": 2447,
       "length": 36,
       "value": "\"❌ 400: Bad Request, \""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2285,
+      "offset": 2482,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "IntegerLiteral",
-      "offset": 2305,
+      "offset": 2502,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2331,
+      "offset": 2528,
       "length": 37,
       "value": "\"❌ 500: Server Error, \""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2367,
+      "offset": 2564,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2412,
+      "offset": 2609,
       "length": 61,
       "value": "\"❌ Error Code: \""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2458,
+      "offset": 2655,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2472,
+      "offset": 2669,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2546,
+      "offset": 2743,
       "length": 56,
       "value": "\"❌ Error: \""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2587,
+      "offset": 2784,
       "length": 1,
       "value": "\", \""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Networking\/NetworkService.swift",
       "kind": "StringLiteral",
-      "offset": 2601,
+      "offset": 2798,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 313,
+      "offset": 260,
       "length": 19,
       "value": "\"put_in_foreground\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 355,
+      "offset": 302,
       "length": 19,
       "value": "\"put_in_background\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 313,
+      "offset": 260,
       "length": 19,
       "value": "\"put_in_foreground\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Event.swift",
       "kind": "StringLiteral",
-      "offset": 355,
+      "offset": 302,
       "length": 19,
       "value": "\"put_in_background\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/DimissKeyboard.swift",
+      "kind": "BooleanLiteral",
+      "offset": 643,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 1253,
+      "offset": 521,
       "length": 36,
       "value": "\"UINavigationStackHostingController\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1354,
+      "offset": 689,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 1522,
+      "offset": 851,
+      "length": 9,
+      "value": "\"UIInput\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 919,
+      "length": 10,
+      "value": "\"Keyboard\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 988,
+      "length": 34,
+      "value": "\"_UICursorAccessoryViewController\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 1081,
+      "length": 36,
+      "value": "\"UICompatibilityInputViewController\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 1176,
+      "length": 28,
+      "value": "\"UIPredictionViewController\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 1419,
       "length": 10,
       "value": "\"No title\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 1771,
+      "offset": 1782,
       "length": 36,
       "value": "\"UINavigationStackHostingController\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1872,
+      "offset": 1950,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 2043,
+      "offset": 2112,
+      "length": 9,
+      "value": "\"UIInput\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 2180,
+      "length": 10,
+      "value": "\"Keyboard\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 2249,
+      "length": 34,
+      "value": "\"_UICursorAccessoryViewController\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 2342,
+      "length": 36,
+      "value": "\"UICompatibilityInputViewController\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 2437,
+      "length": 28,
+      "value": "\"UIPredictionViewController\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/UIViewController+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 2686,
       "length": 10,
       "value": "\"No title\""
     },
@@ -7049,42 +7519,98 @@
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
       "kind": "StringLiteral",
-      "offset": 971,
+      "offset": 882,
       "length": 4,
       "value": "\"en\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
       "kind": "StringLiteral",
-      "offset": 1712,
+      "offset": 1008,
+      "length": 4,
+      "value": "\"en\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
+      "kind": "StringLiteral",
+      "offset": 1135,
+      "length": 42,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
+      "kind": "StringLiteral",
+      "offset": 1161,
+      "length": 4,
+      "value": "\"en\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
+      "kind": "StringLiteral",
+      "offset": 1166,
+      "length": 1,
+      "value": "\"-\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
+      "kind": "StringLiteral",
+      "offset": 1176,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
+      "kind": "StringLiteral",
+      "offset": 1214,
+      "length": 32,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
+      "kind": "StringLiteral",
+      "offset": 1240,
+      "length": 4,
+      "value": "\"en\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
+      "kind": "StringLiteral",
+      "offset": 1245,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
+      "kind": "StringLiteral",
+      "offset": 1993,
       "length": 3,
       "value": "\"<\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
       "kind": "StringLiteral",
-      "offset": 1774,
+      "offset": 2055,
       "length": 3,
       "value": "\">\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
       "kind": "IntegerLiteral",
-      "offset": 1855,
+      "offset": 2136,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
       "kind": "StringLiteral",
-      "offset": 2874,
+      "offset": 3205,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/DataPointService\/DataPointService.swift",
       "kind": "StringLiteral",
-      "offset": 2929,
+      "offset": 3260,
       "length": 10,
       "value": "\"No Title\""
     },
@@ -7274,7 +7800,7 @@
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
       "kind": "StringLiteral",
       "offset": 1157,
-      "length": 102,
+      "length": 295,
       "value": "\"\""
     },
     {
@@ -7288,6 +7814,97 @@
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
       "kind": "StringLiteral",
       "offset": 1262,
+      "length": 4,
+      "value": "\"\n\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1404,
+      "length": 33,
+      "value": "\"----- Logged Event Begins -----\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1466,
+      "length": 240,
+      "value": "\"DeviceID: \""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1506,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1509,
+      "length": 2,
+      "value": "\"\nTS: \""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1537,
+      "length": 2,
+      "value": "\"\nTZ: \""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1565,
+      "length": 1,
+      "value": "\"\nQ : \""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1601,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1604,
+      "length": 1,
+      "value": "\"\nS : \""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1640,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1646,
+      "length": 2,
+      "value": "\"\nNR : \""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1690,
+      "length": 88,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1730,
+      "length": 31,
+      "value": "\"----- Logged Event Ends -----\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/EventManagement\/Services\/LoggerService\/LoggerService.swift",
+      "kind": "StringLiteral",
+      "offset": 1777,
       "length": 4,
       "value": "\"\n\""
     }

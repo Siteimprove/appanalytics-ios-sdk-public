@@ -277,9 +277,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import Foundation;
 @import ObjectiveC;
-@import UIKit;
 #endif
 
 #endif
@@ -319,20 +317,9 @@ SWIFT_CLASS("_TtC23SiteimproveAppAnalytics11Siteimprove")
 /// \param region r1 (EU) or r2 (US)
 ///
 - (void)configureWithApiKey:(NSString * _Nonnull)apiKey region:(NSString * _Nonnull)region;
-/// MARK: - Track custom event
-/// \param name Name of the event
-///
-/// \param data Data related to the event
-///
-- (void)trackEventWithName:(NSString * _Nonnull)name data:(NSDictionary<NSString *, id> * _Nonnull)data;
 @end
 
 
-@class UIResponder;
-
-@interface UIViewController (SWIFT_EXTENSION(SiteimproveAppAnalytics))
-@property (nonatomic, readonly, strong) UIResponder * _Nullable nextResponder;
-@end
 
 #endif
 #if __has_attribute(external_source_symbol)

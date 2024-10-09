@@ -42,10 +42,9 @@ public enum ScreenState : Swift.String {
     get
   }
 }
-extension UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var next: UIKit.UIResponder? {
-    @objc get
-  }
+extension SwiftUI.View {
+  public func dismissingKeyboard() -> some SwiftUI.View
+  
 }
 public struct APIConstants {
   public enum HeaderField : Swift.String {
@@ -93,8 +92,8 @@ public struct APIConstants {
   }
 }
 public protocol EventManagerProtocol {
-  func trackEvent(with name: Swift.String, data: [Swift.String : Any])
   func trackAndLog(event: Swift.String, type: SiteimproveAppAnalytics.EventType, navigationTitle: Swift.String?)
+  func trackSearchEvent(q: Swift.String, s: Swift.Bool, nr: Swift.Int?)
 }
 extension Swift.Encodable {
   public func asDictionary() -> [Swift.String : Any]
@@ -112,7 +111,6 @@ public struct WebView : SwiftUI.UIViewRepresentable {
   final public var configuration: SiteimproveAppAnalytics.Configuration?
   public static let shared: SiteimproveAppAnalytics.Siteimprove
   @objc final public func configure(apiKey: Swift.String, region: Swift.String)
-  @objc final public func trackEvent(name: Swift.String, data: [Swift.String : Any])
   @objc deinit
 }
 extension Foundation.Date {
@@ -123,7 +121,8 @@ public struct DTO : Swift.Codable {
   public let tz: Swift.String
   public let st: SiteimproveAppAnalytics.ST?
   public let scr: SiteimproveAppAnalytics.SCR?
-  public init(ts: Swift.Int64, tz: Swift.String, st: SiteimproveAppAnalytics.ST?, scr: SiteimproveAppAnalytics.SCR?)
+  public let srch: SiteimproveAppAnalytics.SRCH?
+  public init(ts: Swift.Int64, tz: Swift.String, st: SiteimproveAppAnalytics.ST?, scr: SiteimproveAppAnalytics.SCR?, srch: SiteimproveAppAnalytics.SRCH?)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -148,6 +147,13 @@ public struct SCR : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct SRCH : Swift.Codable {
+  public let q: Swift.String
+  public let s: Swift.Bool
+  public let nr: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 public class Configuration {
   final public let apiKey: Swift.String
   final public let region: SiteimproveAppAnalytics.Region?
@@ -157,8 +163,8 @@ public class Configuration {
 }
 @objc @_hasMissingDesignatedInitializers final public class EventManager : ObjectiveC.NSObject, SiteimproveAppAnalytics.EventManagerProtocol {
   @objc deinit
-  final public func trackEvent(with name: Swift.String, data: [Swift.String : Any])
   final public func trackAndLog(event: Swift.String, type: SiteimproveAppAnalytics.EventType, navigationTitle: Swift.String? = nil)
+  final public func trackSearchEvent(q: Swift.String, s: Swift.Bool, nr: Swift.Int?)
 }
 public protocol DataPointServiceProtocol {
   func deviceID() -> Swift.String?
@@ -172,6 +178,7 @@ public protocol DataPointServiceProtocol {
   func screenName() -> Swift.String?
   func stateDTO(event: Swift.String) -> [SiteimproveAppAnalytics.DTO]
   func screenDTO(event: Swift.String, navigationTitle: Swift.String?) -> [SiteimproveAppAnalytics.DTO]
+  func searchDTO(q: Swift.String, s: Swift.Bool, nr: Swift.Int?) -> [SiteimproveAppAnalytics.DTO]
 }
 public protocol NetworkServiceProtocol {
   func track(deviceID: Swift.String?, body: [SiteimproveAppAnalytics.DTO]?)
@@ -198,6 +205,7 @@ public struct EventData {
 }
 public protocol LoggerServiceProtocol {
   func log(data: SiteimproveAppAnalytics.EventData, dto: [SiteimproveAppAnalytics.DTO])
+  func logSearchEvent(deviceID: Swift.String?, dto: [SiteimproveAppAnalytics.DTO])
 }
 public struct DataPointService : SiteimproveAppAnalytics.DataPointServiceProtocol {
   public init()
@@ -212,10 +220,12 @@ public struct DataPointService : SiteimproveAppAnalytics.DataPointServiceProtoco
   public func screenName() -> Swift.String?
   public func stateDTO(event: Swift.String) -> [SiteimproveAppAnalytics.DTO]
   public func screenDTO(event: Swift.String, navigationTitle: Swift.String?) -> [SiteimproveAppAnalytics.DTO]
+  public func searchDTO(q: Swift.String, s: Swift.Bool, nr: Swift.Int?) -> [SiteimproveAppAnalytics.DTO]
 }
 public struct LoggerService : SiteimproveAppAnalytics.LoggerServiceProtocol {
   public init()
   public func log(data: SiteimproveAppAnalytics.EventData, dto: [SiteimproveAppAnalytics.DTO])
+  public func logSearchEvent(deviceID: Swift.String?, dto: [SiteimproveAppAnalytics.DTO])
 }
 extension SiteimproveAppAnalytics.EventType : Swift.Equatable {}
 extension SiteimproveAppAnalytics.EventType : Swift.Hashable {}
