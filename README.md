@@ -1,3 +1,5 @@
+# AppAnalytics iOS SDK
+
 ## Contents
 
 - [Requirements](#requirements)
@@ -12,7 +14,10 @@ The minimum deployment target is iOS 15.
 You can install the Siteimprove SDK using the Swift Package Manager or by manually downloading and adding it to your project.
 
 ### Swift Package Manager (preferred)
-In Xcode, add a package dependency to your project using the following URL: `"Add URL to the public repository"`
+In Xcode, add a package dependency to your project using the following URL:  
+```swift
+https://github.com/Siteimprove/appanalytics-ios-sdk-public
+```
 
 ### Manual
 The XCFramework can be downloaded from our [release page] (add link to the release page of the SDK). After unzipping, place the XCFramework in the Framework Search Paths of your Xcode project, import it into the project, and configure it to `Embed & Sign`.
