@@ -1,0 +1,246 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SiteimproveAppAnalytics
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Combine
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers public class NetworkService : SiteimproveAppAnalytics.NetworkServiceProtocol {
+  public func track(deviceID: Swift.String?, body: [SiteimproveAppAnalytics.DTO]?)
+  @objc deinit
+}
+public enum EventType : Swift.String {
+  case state, screen
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum AppState : Swift.String {
+  case opened
+  case closed
+  case foreground
+  case background
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ScreenState : Swift.String {
+  case shown, dismissed
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var next: UIKit.UIResponder? {
+    @objc get
+  }
+}
+public struct APIConstants {
+  public enum HeaderField : Swift.String {
+    case contentType
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum ParamField : Swift.String {
+    case APIKey
+    case deviceID
+    case sdks
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum ParamValue : Swift.String {
+    case sdks
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum ContentType : Swift.String {
+    case json
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum ComponentField : Swift.String {
+    case host
+    case path
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+public protocol EventManagerProtocol {
+  func trackEvent(with name: Swift.String, data: [Swift.String : Any])
+  func trackAndLog(event: Swift.String, type: SiteimproveAppAnalytics.EventType, navigationTitle: Swift.String?)
+}
+extension Swift.Encodable {
+  public func asDictionary() -> [Swift.String : Any]
+  public func encoded() throws -> Foundation.Data
+}
+public struct WebView : SwiftUI.UIViewRepresentable {
+  public init(url: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func makeUIView(context: SiteimproveAppAnalytics.WebView.Context) -> WebKit.WKWebView
+  @_Concurrency.MainActor(unsafe) public func updateUIView(_ uiView: WebKit.WKWebView, context: SiteimproveAppAnalytics.WebView.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+  public typealias UIViewType = WebKit.WKWebView
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class Siteimprove : ObjectiveC.NSObject {
+  final public var configuration: SiteimproveAppAnalytics.Configuration?
+  public static let shared: SiteimproveAppAnalytics.Siteimprove
+  @objc final public func configure(apiKey: Swift.String, region: Swift.String)
+  @objc final public func trackEvent(name: Swift.String, data: [Swift.String : Any])
+  @objc deinit
+}
+extension Foundation.Date {
+  public func toMilliseconds() -> Swift.Int64
+}
+public struct DTO : Swift.Codable {
+  public let ts: Swift.Int64
+  public let tz: Swift.String
+  public let st: SiteimproveAppAnalytics.ST?
+  public let scr: SiteimproveAppAnalytics.SCR?
+  public init(ts: Swift.Int64, tz: Swift.String, st: SiteimproveAppAnalytics.ST?, scr: SiteimproveAppAnalytics.SCR?)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ST : Swift.Codable {
+  public let s: Swift.String
+  public let ctx: SiteimproveAppAnalytics.CTX
+  public init(s: Swift.String, ctx: SiteimproveAppAnalytics.CTX)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CTX : Swift.Codable {
+  public let dv: Swift.String, os: Swift.String, osv: Swift.String, loc: Swift.String, aloc: Swift.String
+  public init(dv: Swift.String, os: Swift.String, osv: Swift.String, loc: Swift.String, aloc: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SCR : Swift.Codable {
+  public let n: Swift.String
+  public let t: Swift.String?
+  public let s: Swift.String
+  public init(n: Swift.String, t: Swift.String?, s: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public class Configuration {
+  final public let apiKey: Swift.String
+  final public let region: SiteimproveAppAnalytics.Region?
+  public init(apiKey: Swift.String, region: SiteimproveAppAnalytics.Region? = .r1)
+  public func baseURL() -> Swift.String
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers final public class EventManager : ObjectiveC.NSObject, SiteimproveAppAnalytics.EventManagerProtocol {
+  @objc deinit
+  final public func trackEvent(with name: Swift.String, data: [Swift.String : Any])
+  final public func trackAndLog(event: Swift.String, type: SiteimproveAppAnalytics.EventType, navigationTitle: Swift.String? = nil)
+}
+public protocol DataPointServiceProtocol {
+  func deviceID() -> Swift.String?
+  func timestamp() -> Swift.Int64
+  func timezoneIdentifier() -> Swift.String
+  func deviceModel() -> Swift.String
+  func operationSystem() -> Swift.String
+  func systemVersion() -> Swift.String
+  func localeIdentifier() -> Swift.String
+  func aloc() -> Swift.String
+  func screenName() -> Swift.String?
+  func stateDTO(event: Swift.String) -> [SiteimproveAppAnalytics.DTO]
+  func screenDTO(event: Swift.String, navigationTitle: Swift.String?) -> [SiteimproveAppAnalytics.DTO]
+}
+public protocol NetworkServiceProtocol {
+  func track(deviceID: Swift.String?, body: [SiteimproveAppAnalytics.DTO]?)
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static func modelName(for identifier: Swift.String) -> Swift.String
+  @_Concurrency.MainActor(unsafe) public static var currentIdentifier: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static var modelName: Swift.String {
+    get
+  }
+}
+public enum Region : Swift.String {
+  case r1, r2
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct EventData {
+  public init(event: Swift.String, type: SiteimproveAppAnalytics.EventType, deviceID: Swift.String?)
+}
+public protocol LoggerServiceProtocol {
+  func log(data: SiteimproveAppAnalytics.EventData, dto: [SiteimproveAppAnalytics.DTO])
+}
+public struct DataPointService : SiteimproveAppAnalytics.DataPointServiceProtocol {
+  public init()
+  public func deviceID() -> Swift.String?
+  public func timestamp() -> Swift.Int64
+  public func timezoneIdentifier() -> Swift.String
+  public func deviceModel() -> Swift.String
+  public func operationSystem() -> Swift.String
+  public func systemVersion() -> Swift.String
+  public func localeIdentifier() -> Swift.String
+  public func aloc() -> Swift.String
+  public func screenName() -> Swift.String?
+  public func stateDTO(event: Swift.String) -> [SiteimproveAppAnalytics.DTO]
+  public func screenDTO(event: Swift.String, navigationTitle: Swift.String?) -> [SiteimproveAppAnalytics.DTO]
+}
+public struct LoggerService : SiteimproveAppAnalytics.LoggerServiceProtocol {
+  public init()
+  public func log(data: SiteimproveAppAnalytics.EventData, dto: [SiteimproveAppAnalytics.DTO])
+}
+extension SiteimproveAppAnalytics.EventType : Swift.Equatable {}
+extension SiteimproveAppAnalytics.EventType : Swift.Hashable {}
+extension SiteimproveAppAnalytics.EventType : Swift.RawRepresentable {}
+extension SiteimproveAppAnalytics.AppState : Swift.Equatable {}
+extension SiteimproveAppAnalytics.AppState : Swift.Hashable {}
+extension SiteimproveAppAnalytics.AppState : Swift.RawRepresentable {}
+extension SiteimproveAppAnalytics.ScreenState : Swift.Equatable {}
+extension SiteimproveAppAnalytics.ScreenState : Swift.Hashable {}
+extension SiteimproveAppAnalytics.ScreenState : Swift.RawRepresentable {}
+extension SiteimproveAppAnalytics.APIConstants.HeaderField : Swift.Equatable {}
+extension SiteimproveAppAnalytics.APIConstants.HeaderField : Swift.Hashable {}
+extension SiteimproveAppAnalytics.APIConstants.HeaderField : Swift.RawRepresentable {}
+extension SiteimproveAppAnalytics.APIConstants.ParamField : Swift.Equatable {}
+extension SiteimproveAppAnalytics.APIConstants.ParamField : Swift.Hashable {}
+extension SiteimproveAppAnalytics.APIConstants.ParamField : Swift.RawRepresentable {}
+extension SiteimproveAppAnalytics.APIConstants.ParamValue : Swift.Equatable {}
+extension SiteimproveAppAnalytics.APIConstants.ParamValue : Swift.Hashable {}
+extension SiteimproveAppAnalytics.APIConstants.ParamValue : Swift.RawRepresentable {}
+extension SiteimproveAppAnalytics.APIConstants.ContentType : Swift.Equatable {}
+extension SiteimproveAppAnalytics.APIConstants.ContentType : Swift.Hashable {}
+extension SiteimproveAppAnalytics.APIConstants.ContentType : Swift.RawRepresentable {}
+extension SiteimproveAppAnalytics.APIConstants.ComponentField : Swift.Equatable {}
+extension SiteimproveAppAnalytics.APIConstants.ComponentField : Swift.Hashable {}
+extension SiteimproveAppAnalytics.APIConstants.ComponentField : Swift.RawRepresentable {}
+extension SiteimproveAppAnalytics.Region : Swift.Equatable {}
+extension SiteimproveAppAnalytics.Region : Swift.Hashable {}
+extension SiteimproveAppAnalytics.Region : Swift.RawRepresentable {}

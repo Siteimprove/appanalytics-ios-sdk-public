@@ -1,0 +1,4 @@
+framework module SiteimproveAppAnalytics {
+  header "SiteimproveAppAnalytics-Swift.h"
+  requires objc
+}
