@@ -12,7 +12,7 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(
-            name: "SiteimproveAppAnalytics", url: "https://github.com/Siteimprove/appanalytics-ios-sdk-public/releases/download/1.1.0/SiteimproveAppAnalytics.xcframework.zip", checksum: "9edc7ae50ea0962552606533b8b05b134d5b9af96cb6825fd3bd3ee12abd58c6"
+            name: "SiteimproveAppAnalytics", url: "https://github.com/Siteimprove/appanalytics-ios-sdk-public/releases/download/1.1.0/SiteimproveAppAnalytics.xcframework.zip", checksum: "ecdb3eb370f178b524d411233c1017dbde67178ee31f98508213ac5d5c78092d"
         )
     ]
 )
