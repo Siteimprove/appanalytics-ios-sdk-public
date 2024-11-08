@@ -6,9 +6,6 @@
 - [Configuring the SDK](#configuring-the-sdk)
 - [SDK API](#sdk-api)
 - [Events Tracking](#events-tracking)
-- [Usage Examples](#usage-examples)
-
-
 
 ## Requirements
 The minimum deployment target is iOS 15.
