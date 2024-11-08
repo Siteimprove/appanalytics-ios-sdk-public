@@ -7,6 +7,7 @@
 - [SDK API](#sdk-api)
 - [Events Tracking](#events-tracking)
 
+
 ## Requirements
 The minimum deployment target is iOS 15.
 
@@ -24,9 +25,7 @@ The XCFramework can be downloaded from our [release page](https://github.com/Sit
 
 ## Configuring the SDK
 Our suggestion for configuring the Siteimprove AppAnalytics is to do so in the AppDelegate.
-You must provide an API key as well as region:
-- r1 - EU
-- r2 - US
+You must provide an API key as well as region - r1 or r2. Information about API key and region can be found within the Siteimprove platform
 
 The following is an example of how this could be done:
 
@@ -71,14 +70,34 @@ At present, the SDK is capable of tracking the following events:
 * `shown` - This event is triggered when a screen is displayed.
 * `dismissed` - This event is triggered when a screen is dismissed.
 
+To enable the screen tracking functionality of the SDK within SwiftUI views, developers are required to utilize an additional modifier named tagScreen. This modifier is responsible for conveying crucial metadata pertaining to the currently displayed screen.
+
+- Parameters:
+
+    - **screenName:** A string that represents the unique identifier of the screen.
+    - **navTitle**(optional): A string that represents the navigation title of the screen.
+
+Here's an example of how to use the tagScreen modifier in a SwiftUI view:
+```swift
+import SwiftUI
+import SiteimproveAppAnalytics
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Text("Hello World")
+        }
+        .tagScreen("Home", "Home Navigation")
+    }
+}
+```
+
 ### Custom Events
 
 * `search` - Track search events by providing query, isSuccessful as well as numberOfResults
 * `custom` - Track custom events by providing k as the key of the event as well as attributes associated with the event specified as a set of key/value pairs.
 
-## Usage Examples
-
-*1. Tracking search event*
+1. Tracking search event
 
 To track a search event, use the **trackSearchEvent** method when a user performs a search. This could be in the search bar’s action or on a search results page.
 
@@ -101,7 +120,7 @@ func performSearch(query: String) {
     - **numberOfResults:** An Int representing the number of results found.
     
     
-*2. Tracking custom event*
+2. Tracking custom event
 
 Use **trackCustomEvent** to track custom user actions in the app, such as refreshing the cart, completing a checkout, or any other custom user interaction.
 
@@ -122,4 +141,3 @@ func refreshCart() {
     - **a:** A dictionary of key-value pairs detailing attributes of the event. Here, we’re providing cart details like item count and value.
     
 **Note:** When using the trackCustomEvent method, it is crucial to ensure the uniqueness of the keys in the attributes dictionary. Duplicate keys are not recommended. If duplication occurs, the first instance of the key-value pair will be prioritised, and subsequent duplicates will be ignored. Please take care to avoid key duplication to ensure accurate event tracking.
-
