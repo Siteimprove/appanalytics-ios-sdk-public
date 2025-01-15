@@ -11,12 +11,18 @@
 The minimum deployment target is iOS 15.
 
 ## Installation
-You can install the Siteimprove SDK using the Swift Package Manager or by manually downloading and adding it to your project.
+You can install the Siteimprove SDK using the Swift Package Manager, CocoaPods or by manually downloading and adding it to your project.
 
 ### Swift Package Manager (preferred)
 In Xcode, add a package dependency to your project using the following URL:  
 ```swift
 https://github.com/Siteimprove/appanalytics-ios-sdk-public
+```
+### Cocoapods
+
+In your Podfile, add the following line:
+```
+pod 'SiteimproveAppAnalytics', :git => 'https://github.com/Siteimprove/appanalytics-ios-sdk-public', :branch => 'main'
 ```
 
 ### Manual
