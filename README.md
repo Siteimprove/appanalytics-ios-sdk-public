@@ -24,7 +24,7 @@ The XCFramework can be downloaded from our [release page](https://github.com/Sit
 
 ## Configuring the SDK
 Our suggestion for configuring the Siteimprove AppAnalytics is to do so in the AppDelegate.
-You must provide an API key as well as region - r1 or r2. Information about API key and region can be found within the Siteimprove platform
+You must provide an API key as well as region - Region1 or Region2. Information about API key and region can be found within the Siteimprove platform
 
 The following is an example of how this could be done:
 
