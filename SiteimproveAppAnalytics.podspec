@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Stefan Aleksiev' => 'stefan.aleksiev@lab08.com', 'Ivan Dortulov' => 'ivan.dortulov@lab08.com', 'Muskan' => 'mus@siteimprove.com' }
 
   s.source = { :http => "https://github.com/Siteimprove/appanalytics-ios-sdk-public/releases/download/#{s.version}/SiteimproveAppAnalytics.xcframework.zip" }
-  s.vendored_frameworks = "**/SiteimproveAppAnalytics.xcframework"
+  s.vendored_frameworks = "SiteimproveAppAnalytics.xcframework"
   s.ios.deployment_target = '15.0'
 
   s.homepage         = 'https://siteimprove.com'
