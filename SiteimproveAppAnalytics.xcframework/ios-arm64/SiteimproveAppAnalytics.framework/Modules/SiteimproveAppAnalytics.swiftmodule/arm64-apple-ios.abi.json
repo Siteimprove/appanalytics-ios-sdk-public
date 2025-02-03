@@ -1775,9 +1775,10 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@SiteimproveAppAnalytics@objc(cs)Siteimprove(im)configureWithApiKey:region:",
-            "mangledName": "$s23SiteimproveAppAnalytics0A0C9configure6apiKey6regionySS_SStF",
+            "usr": "c:@M@SiteimproveAppAnalytics@objc(cs)Siteimprove(cm)configureWithApiKey:region:",
+            "mangledName": "$s23SiteimproveAppAnalytics0A0C9configure6apiKey6regionySS_SStFZ",
             "moduleName": "SiteimproveAppAnalytics",
+            "static": true,
             "objc_name": "configureWithApiKey:region:",
             "declAttributes": [
               "Final",
@@ -1817,9 +1818,10 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@SiteimproveAppAnalytics@objc(cs)Siteimprove(im)trackSearchEventWithQuery:isSuccessful:numberOfResults:",
-            "mangledName": "$s23SiteimproveAppAnalytics0A0C16trackSearchEvent5query12isSuccessful15numberOfResultsySS_SbSitF",
+            "usr": "c:@M@SiteimproveAppAnalytics@objc(cs)Siteimprove(cm)trackSearchEventWithQuery:isSuccessful:numberOfResults:",
+            "mangledName": "$s23SiteimproveAppAnalytics0A0C16trackSearchEvent5query12isSuccessful15numberOfResultsySS_SbSitFZ",
             "moduleName": "SiteimproveAppAnalytics",
+            "static": true,
             "objc_name": "trackSearchEventWithQuery:isSuccessful:numberOfResults:",
             "declAttributes": [
               "Final",
@@ -1867,10 +1869,54 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@SiteimproveAppAnalytics@objc(cs)Siteimprove(im)trackCustomEventWithK:a:",
-            "mangledName": "$s23SiteimproveAppAnalytics0A0C16trackCustomEvent1k1aySS_SDyS2SGtF",
+            "usr": "c:@M@SiteimproveAppAnalytics@objc(cs)Siteimprove(cm)trackCustomEventWithK:a:",
+            "mangledName": "$s23SiteimproveAppAnalytics0A0C16trackCustomEvent1k1aySS_SDyS2SGtFZ",
             "moduleName": "SiteimproveAppAnalytics",
+            "static": true,
             "objc_name": "trackCustomEventWithK:a:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "trackScreen",
+            "printedName": "trackScreen(s:name:navTitle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SiteimproveAppAnalytics@objc(cs)Siteimprove(cm)trackScreenWithS:name:navTitle:",
+            "mangledName": "$s23SiteimproveAppAnalytics0A0C11trackScreen1s4name8navTitleySS_S2StFZ",
+            "moduleName": "SiteimproveAppAnalytics",
+            "static": true,
+            "objc_name": "trackScreenWithS:name:navTitle:",
             "declAttributes": [
               "Final",
               "AccessControl",
@@ -5037,9 +5083,58 @@
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Core\/Siteimprove.swift",
       "kind": "StringLiteral",
-      "offset": 805,
+      "offset": 824,
       "length": 41,
       "value": "\"API Key missing from configuration! ❌\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Core\/Siteimprove.swift",
+      "kind": "StringLiteral",
+      "offset": 979,
+      "length": 4,
+      "value": "\"r1\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Core\/Siteimprove.swift",
+      "kind": "StringLiteral",
+      "offset": 985,
+      "length": 9,
+      "value": "\"Region1\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Core\/Siteimprove.swift",
+      "kind": "StringLiteral",
+      "offset": 1040,
+      "length": 4,
+      "value": "\"r2\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Core\/Siteimprove.swift",
+      "kind": "StringLiteral",
+      "offset": 1046,
+      "length": 9,
+      "value": "\"Region2\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Core\/Siteimprove.swift",
+      "kind": "StringLiteral",
+      "offset": 2744,
+      "length": 28,
+      "value": "\"Invalid screen state: \""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Core\/Siteimprove.swift",
+      "kind": "StringLiteral",
+      "offset": 2771,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Core\/Siteimprove.swift",
+      "kind": "StringLiteral",
+      "offset": 3159,
+      "length": 7,
+      "value": "\"shown\""
     },
     {
       "filePath": "\/Users\/stefanaleksiev\/appanalytics-ios-sdk\/SiteimproveAppAnalytics\/Sources\/Modules\/Utils\/Extensions\/Date+Extensions.swift",

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SiteimproveAppAnalytics'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'SiteimproveAppAnalytics iOS SDK'
   s.description      = 'SiteimproveAppAnalytics SDK enables user behavior tracking in iOS applications. Integration requires a Siteimprove API key.'
 

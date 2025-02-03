@@ -98,9 +98,10 @@ extension Swift.Encodable {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class Siteimprove : ObjectiveC.NSObject {
   public static let shared: SiteimproveAppAnalytics.Siteimprove
   @objc deinit
-  @objc final public func configure(apiKey: Swift.String, region: Swift.String)
-  @objc final public func trackSearchEvent(query: Swift.String, isSuccessful: Swift.Bool, numberOfResults: Swift.Int)
-  @objc final public func trackCustomEvent(k: Swift.String, a: [Swift.String : Swift.String])
+  @objc public static func configure(apiKey: Swift.String, region: Swift.String)
+  @objc public static func trackSearchEvent(query: Swift.String, isSuccessful: Swift.Bool, numberOfResults: Swift.Int)
+  @objc public static func trackCustomEvent(k: Swift.String, a: [Swift.String : Swift.String])
+  @objc public static func trackScreen(s: Swift.String, name: Swift.String, navTitle: Swift.String)
 }
 extension Foundation.Date {
   public func toMilliseconds() -> Swift.Int64

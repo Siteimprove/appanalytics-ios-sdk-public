@@ -315,9 +315,9 @@ SWIFT_CLASS("_TtC23SiteimproveAppAnalytics11Siteimprove")
 /// Configure the SDK
 /// \param apiKey API key
 ///
-/// \param region r1 (EU) or r2 (US)
+/// \param region r1 or Region1 or r2 or Region2
 ///
-- (void)configureWithApiKey:(NSString * _Nonnull)apiKey region:(NSString * _Nonnull)region;
++ (void)configureWithApiKey:(NSString * _Nonnull)apiKey region:(NSString * _Nonnull)region;
 /// MARK: - Track search event
 /// \param query search query
 ///
@@ -325,7 +325,7 @@ SWIFT_CLASS("_TtC23SiteimproveAppAnalytics11Siteimprove")
 ///
 /// \param numberOfResults The number of results returned when performing the search.
 ///
-- (void)trackSearchEventWithQuery:(NSString * _Nonnull)query isSuccessful:(BOOL)isSuccessful numberOfResults:(NSInteger)numberOfResults;
++ (void)trackSearchEventWithQuery:(NSString * _Nonnull)query isSuccessful:(BOOL)isSuccessful numberOfResults:(NSInteger)numberOfResults;
 /// MARK: - Track custom event
 /// \param k The key of the event. The key is not case-sensitive and should be lower-cased.
 /// example: cart.refresh
@@ -333,7 +333,16 @@ SWIFT_CLASS("_TtC23SiteimproveAppAnalytics11Siteimprove")
 /// \param a Attributes associated with the event specified as a set of key/value pairs. Keys should be lower-cased. Values should be single values and not objects.
 /// example: Map { “guest”: “true”, “currency”: “USD”, “cart.item_count”: “10”, “cart.value”: “249.99” }
 ///
-- (void)trackCustomEventWithK:(NSString * _Nonnull)k a:(NSDictionary<NSString *, NSString *> * _Nonnull)a;
++ (void)trackCustomEventWithK:(NSString * _Nonnull)k a:(NSDictionary<NSString *, NSString *> * _Nonnull)a;
+/// MARK: - Track screen manually
+/// \param s shown or dismissed
+///
+/// \param name screen name
+///
+/// \param navTitle navigation title of the screen
+/// example: trackScreen(s: shown, name: Home, navTitle: HomeNav)
+///
++ (void)trackScreenWithS:(NSString * _Nonnull)s name:(NSString * _Nonnull)name navTitle:(NSString * _Nonnull)navTitle;
 @end
 
 
