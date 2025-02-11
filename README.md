@@ -73,7 +73,7 @@ public func trackNotificationEvent(uid: String, s: String, k: String)
 ```
 
 ## Events Tracking
-At present, the SDK is capable of tracking the following events **automatically**:
+At present, the SDK is capable of tracking the following events:
 
 ### App Events
 * `opened` - This event is triggered when the app is launched.
