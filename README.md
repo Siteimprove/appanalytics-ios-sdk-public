@@ -169,9 +169,9 @@ func refreshCart() {
 Use **trackNotificationEvent** to track push notifications events
 
 - Parameters:
-    - **uid:** Unique identifier for the notification received
-    - **s:** The state of the notification - received or opened
-    - **k:** The key of the notification
+    - **uid:** A string that represents unique identifier for the notification
+    - **s:** A string that represents the state of the notification - received or opened
+    - **k:** A string that represents the key of the notification
 
 **Note:** When using the trackNotificationEvent method, it is crucial to ensure the uniqueness of the uids passed as parameter.
 
@@ -180,7 +180,7 @@ Use **trackNotificationEvent** to track push notifications events
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        Siteimprove.trackNotificationEvent(uid: notification.request.identifier, s: "received", k: "some key")
+        Siteimprove.trackNotificationEvent(uid: uniqueId, s: "received", k: "some key")
         completionHandler([.banner, .sound, .badge])
     }
 ```
@@ -190,7 +190,7 @@ Use **trackNotificationEvent** to track push notifications events
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-        Siteimprove.trackNotificationEvent(uid: response.notification.request.identifier, s: "opened", k: "some key")
+        Siteimprove.trackNotificationEvent(uid: uniqueId s: "opened", k: "some key")
         completionHandler()
     }
 ```
