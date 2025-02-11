@@ -22,7 +22,7 @@ https://github.com/Siteimprove/appanalytics-ios-sdk-public
 
 In your Podfile, add the following line:
 ```
-pod 'SiteimproveAppAnalytics', :git => 'https://github.com/Siteimprove/appanalytics-ios-sdk-public', :tag => '1.1.1'
+pod 'SiteimproveAppAnalytics', :git => 'https://github.com/Siteimprove/appanalytics-ios-sdk-public', :tag => '1.2.0'
 ```
 
 ### Manual
@@ -62,8 +62,18 @@ public func trackSearchEvent(query: String, isSuccessful: Bool, numberOfResults:
 public func trackCustomEvent(k: String, a: [String : String])
 ```
 
+- Track screen event **manually**
+```swift
+public func trackScreenEvent(s: String, name: String, navTitle: String)
+```
+
+- Track push notification event
+```swift
+public func trackNotificationEvent(uid: String, s: String, k: String)
+```
+
 ## Events Tracking
-At present, the SDK is capable of tracking the following events:
+At present, the SDK is capable of tracking the following events **automatically**:
 
 ### App Events
 * `opened` - This event is triggered when the app is launched.
@@ -75,10 +85,10 @@ At present, the SDK is capable of tracking the following events:
 * `shown` - This event is triggered when a screen is displayed.
 * `dismissed` - This event is triggered when a screen is dismissed.
 
+##### Swift
 To enable the screen tracking functionality of the SDK within SwiftUI views, developers are required to utilize an additional modifier named tagScreen. This modifier is responsible for conveying crucial metadata pertaining to the currently displayed screen.
 
 - Parameters:
-
     - **screenName:** A string that represents the unique identifier of the screen.
     - **navTitle**(optional): A string that represents the navigation title of the screen.
 
@@ -97,14 +107,31 @@ struct ContentView: View {
 }
 ```
 
+##### Hybrid
+Due to the difference between native & hybrid, developers that are using hybrid technologies such as react-native are required to utilize an additional method named trackScreenEvent.
+
+- Parameters:
+    - **s:** A string that represents the screen state - shown or dismissed.
+    - **name:** A string that represents the screen name.
+    - **navTitle:** A string that represents the navigation title of the screen.
+
+*For full documentation related to react-native setup follow the link here*
+`TODO: - Add link when repo is deployed`
+
 ### Custom Events
 
-* `search` - Track search events by providing query, isSuccessful as well as numberOfResults
+* `search` - Track search events by providing query, isSuccessful as well as numberOfResults.
 * `custom` - Track custom events by providing k as the key of the event as well as attributes associated with the event specified as a set of key/value pairs.
+* `notification` - Track push notification events by providing uid as unique identifier, state of the notification as well as key associated with the event.
 
 1. Tracking search event
 
 To track a search event, use the **trackSearchEvent** method when a user performs a search. This could be in the search bar’s action or on a search results page.
+
+- Parameters:
+    - **query:** The search query entered by the user.
+    - **isSuccessful:** A Bool indicating if results were found.
+    - **numberOfResults:** An Int representing the number of results found.
 
 ```swift
 func performSearch(query: String) {
@@ -116,18 +143,14 @@ func performSearch(query: String) {
                                         numberOfResults: filteredComponents.count)
 }
 ```
-- Parameters:
-
-    - **query:** The search query entered by the user.
-
-    - **isSuccessful:** A Bool indicating if results were found.
-
-    - **numberOfResults:** An Int representing the number of results found.
-    
     
 2. Tracking custom event
 
 Use **trackCustomEvent** to track custom user actions in the app, such as refreshing the cart, completing a checkout, or any other custom user interaction.
+
+- Parameters:
+    - **k:** The event key describing the type of event ("cart.refresh" in this example).
+    - **a:** A dictionary of key-value pairs detailing attributes of the event. Here, we’re providing cart details like item count and value.
 
 ```swift
 func refreshCart() {
@@ -140,9 +163,34 @@ func refreshCart() {
                                         ])
 }
 ```
-- Parameters:
-
-    - **k:** The event key describing the type of event ("cart.refresh" in this example).
-    - **a:** A dictionary of key-value pairs detailing attributes of the event. Here, we’re providing cart details like item count and value.
-    
 **Note:** When using the trackCustomEvent method, it is crucial to ensure the uniqueness of the keys in the attributes dictionary. Duplicate keys are not recommended. If duplication occurs, the first instance of the key-value pair will be prioritised, and subsequent duplicates will be ignored. Please take care to avoid key duplication to ensure accurate event tracking.
+
+3. Tracking push notifications event
+Use **trackNotificationEvent** to track push notifications events
+
+- Parameters:
+    - **uid:** Unique identifier for the notification received
+    - **s:** The state of the notification - received or opened
+    - **k:** The key of the notification
+
+**Note:** When using the trackNotificationEvent method, it is crucial to ensure the uniqueness of the uids passed as parameter.
+
+*Notification received:*
+```swift
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        Siteimprove.trackNotificationEvent(uid: notification.request.identifier, s: "received", k: "some key")
+        completionHandler([.banner, .sound, .badge])
+    }
+```
+
+*Notification opened:*
+```swift
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        Siteimprove.trackNotificationEvent(uid: response.notification.request.identifier, s: "opened", k: "some key")
+        completionHandler()
+    }
+```
