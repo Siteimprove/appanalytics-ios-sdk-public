@@ -59,7 +59,7 @@ public func trackSearchEvent(query: String, isSuccessful: Bool, numberOfResults:
 
 - Track custom event
 ```swift
-public func trackCustomEvent(key: String, attributes: [String : String])
+public func trackCustomEvent(key: String, attributes: [String : String]?)
 ```
 
 - Track screen event **manually**
@@ -69,7 +69,7 @@ public func trackScreenEvent(state: String, name: String, navTitle: String)
 
 - Track push notification event
 ```swift
-public func trackNotificationEvent(uid: String, state: String, key: String)
+public func trackNotificationEvent(uid: String, state: String, keyс: [String : String]?)
 ```
 
 ## Events Tracking
@@ -170,7 +170,7 @@ Use **trackNotificationEvent** to track push notifications events
 - Parameters:
     - **uid:** A string that represents unique identifier for the notification
     - **state:** A string that represents the state of the notification - received or opened
-    - **key:** A string that represents the key of the notification
+    - **keys:** Data associated with the push notification specified as a set of key/value pairs.
 
 **Note:** When using the trackNotificationEvent method, it is crucial to ensure the uniqueness of the uids passed as parameter.
 
@@ -179,7 +179,7 @@ Use **trackNotificationEvent** to track push notifications events
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        Siteimprove.trackNotificationEvent(uid: uniqueId, state: "received", key: "some key")
+        Siteimprove.trackNotificationEvent(uid: uniqueId, state: "received", keys: ["some key": "some value"])
         completionHandler([.banner, .sound, .badge])
     }
 ```
@@ -189,7 +189,7 @@ Use **trackNotificationEvent** to track push notifications events
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-        Siteimprove.trackNotificationEvent(uid: uniqueId state: "opened", key: "some key")
+        Siteimprove.trackNotificationEvent(uid: uniqueId state: "opened", keys: ["some key": "some value"])
         completionHandler()
     }
 ```
