@@ -22,7 +22,7 @@ https://github.com/Siteimprove/appanalytics-ios-sdk-public
 
 In your Podfile, add the following line:
 ```
-pod 'SiteimproveAppAnalytics', :git => 'https://github.com/Siteimprove/appanalytics-ios-sdk-public', :tag => '1.2.0'
+pod 'SiteimproveAppAnalytics', '1.2.0'
 ```
 
 ### Manual
